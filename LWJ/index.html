@@ -42,29 +42,24 @@
     <div class="section section--type-media">
       <!-- edit 4 begin -->
       <div class="container">
-        <!-- example of image begin -->
-        <video controls poster="./imgs/01.jpg">
-          <source src="./imgs/01.mp4" />
+        <!-- 이미지시작하는 곳 -->
+        <video controls poster="./imgs/00_1.jpg">
+          <source src="./imgs/00_2.mp4" />
         </video>
-        <img src="./imgs/00.jpg" loading="lazy" />
-
+        <!-- 누르면 플레이 id = ""를 그대로 유지하고 뒤만 바꿀 것.-->
+        <img id="btn_audio" src="./imgs/01.jpg" loading="lazy" />
+        <!-- 누르면 플레이-->
+        <!-- 오디오인데 숨겨둠-->
         <audio
-          controls
+          id="bg"
+          src="./imgs/blizzard_sound.mp3"
           loop
-          autoplay
-          style="
-            align-self: center;
-            background-color: #121212;
-            padding-top: 5%;
-            padding-bottom: 15%;
-          "
-        >
-          <source src="./imgs/blizzard_sound.mp3" type="audio/ogg" />
-          <source src="./imgs/blizzard_sound.mp3" type="audio/mpeg" />
-        </audio>
-
-        <img src="./imgs/02.jpg" loading="lazy" />
-        <img src="./imgs/03.jpg" loading="lazy" />
+          style="align-self: center; background-color: #121212; display: none"
+        ></audio>
+        <!-- 오디오인데 숨겨둠-->
+        <img src="./imgs/02_1.jpg" loading="lazy" />
+        <img src="./imgs/02_2.jpg" loading="lazy" />
+        <img src="./imgs/02_3.jpg" loading="lazy" />
         <img src="./imgs/04.jpg" loading="lazy" />
         <video controls poster="./imgs/05.jpg">
           <source src="./imgs/05.mp4" />
@@ -156,5 +151,14 @@
         </div>
       </div>
     </div>
+    <!-- 죽이지 말고 살려둘것. -->
+    <script>
+      let btn = document.querySelector('#btn_audio');
+      let bgm = document.querySelector('#bg');
+      btn.addEventListener('click', (evt) => {
+        bgm.play();
+      });
+    </script>
+    <!-- 죽이지 말고 살려둘것. -->
   </body>
 </html>
